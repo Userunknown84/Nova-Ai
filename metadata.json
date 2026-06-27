@@ -1,0 +1,6 @@
+{
+  "name": "Nova AI",
+  "description": "Premium AI Productivity Platform for students, professionals, and entrepreneurs. Features smart planning, prioritization, and roadmaps.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

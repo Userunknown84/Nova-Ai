@@ -1,0 +1,344 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Core Custom Properties mapping */
+#main-layout-root {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 1. DEFAULT THEME */
+#main-layout-root.theme-default-light {
+  --theme-color-primary: #3b82f6;
+  --theme-color-primary-hover: #1d4ed8;
+  --theme-color-bg-base: #f8fafc;
+  --theme-color-bg-card: #ffffff;
+  --theme-color-border: #e2e8f0;
+  --theme-color-text-title: #0f172a;
+  --theme-color-text-body: #475569;
+  --theme-color-accent-glow: rgba(59, 130, 246, 0.08);
+}
+
+#main-layout-root.theme-default-dark {
+  --theme-color-primary: #3b82f6;
+  --theme-color-primary-hover: #2563eb;
+  --theme-color-bg-base: #050508;
+  --theme-color-bg-card: rgba(18, 14, 46, 0.45);
+  --theme-color-border: rgba(255, 255, 255, 0.05);
+  --theme-color-text-title: #f8fafc;
+  --theme-color-text-body: #94a3b8;
+  --theme-color-accent-glow: rgba(59, 130, 246, 0.15);
+}
+
+/* 2. PURPLE THEME */
+#main-layout-root.theme-purple-light {
+  --theme-color-primary: #8b5cf6;
+  --theme-color-primary-hover: #7c3aed;
+  --theme-color-bg-base: #faf5ff;
+  --theme-color-bg-card: #ffffff;
+  --theme-color-border: rgba(139, 92, 246, 0.18);
+  --theme-color-text-title: #3b0764;
+  --theme-color-text-body: #6b21a8;
+  --theme-color-accent-glow: rgba(139, 92, 246, 0.12);
+}
+
+#main-layout-root.theme-purple-dark {
+  --theme-color-primary: #a78bfa;
+  --theme-color-primary-hover: #8b5cf6;
+  --theme-color-bg-base: #0a0416;
+  --theme-color-bg-card: rgba(29, 13, 62, 0.55);
+  --theme-color-border: rgba(167, 139, 250, 0.18);
+  --theme-color-text-title: #f5f3ff;
+  --theme-color-text-body: #cbd5e1;
+  --theme-color-accent-glow: rgba(167, 139, 250, 0.3);
+}
+
+/* 3. CYBERPUNK THEME - Inspired by Cyberpunk 2077 */
+#main-layout-root.theme-cyberpunk-light {
+  --theme-color-primary: #0891b2;
+  --theme-color-primary-hover: #0e7490;
+  --theme-color-bg-base: #f4f6f8;
+  --theme-color-bg-card: #ffffff;
+  --theme-color-border: rgba(8, 145, 178, 0.28);
+  --theme-color-text-title: #090d16;
+  --theme-color-text-body: #374151;
+  --theme-color-accent-glow: rgba(8, 145, 178, 0.12);
+}
+
+#main-layout-root.theme-cyberpunk-dark {
+  --theme-color-primary: #00f0ff; /* Neon Cyan */
+  --theme-color-primary-hover: #ff0055; /* Neon Magenta */
+  --theme-color-bg-base: #000000; /* Pure deep black */
+  --theme-color-bg-card: rgba(8, 8, 12, 0.95);
+  --theme-color-border: #00f0ff; /* Holographic cyber cyan borders */
+  --theme-color-text-title: #ffffff;
+  --theme-color-text-body: #00f0ff; /* Neon cyan body text highlights */
+  --theme-color-accent-glow: rgba(255, 0, 85, 0.45); /* magenta neon lighting effects */
+}
+
+/* 4. EMERALD THEME */
+#main-layout-root.theme-emerald-light {
+  --theme-color-primary: #10b981;
+  --theme-color-primary-hover: #059669;
+  --theme-color-bg-base: #f0fdf4;
+  --theme-color-bg-card: #ffffff;
+  --theme-color-border: rgba(16, 185, 129, 0.22);
+  --theme-color-text-title: #064e3b;
+  --theme-color-text-body: #065f46;
+  --theme-color-accent-glow: rgba(16, 185, 129, 0.1);
+}
+
+#main-layout-root.theme-emerald-dark {
+  --theme-color-primary: #34d399;
+  --theme-color-primary-hover: #059669;
+  --theme-color-bg-base: #022c22;
+  --theme-color-bg-card: rgba(6, 78, 59, 0.45);
+  --theme-color-border: rgba(52, 211, 153, 0.2);
+  --theme-color-text-title: #f0fdf4;
+  --theme-color-text-body: #a7f3d0;
+  --theme-color-accent-glow: rgba(52, 211, 153, 0.25);
+}
+
+/* 5. SUNSET THEME */
+#main-layout-root.theme-sunset-light {
+  --theme-color-primary: #f97316;
+  --theme-color-primary-hover: #ea580c;
+  --theme-color-bg-base: #fff7ed;
+  --theme-color-bg-card: #ffffff;
+  --theme-color-border: rgba(249, 115, 22, 0.2);
+  --theme-color-text-title: #7c2d12;
+  --theme-color-text-body: #9a3412;
+  --theme-color-accent-glow: rgba(249, 115, 22, 0.1);
+}
+
+#main-layout-root.theme-sunset-dark {
+  --theme-color-primary: #f97316;
+  --theme-color-primary-hover: #fb923c;
+  --theme-color-bg-base: #1c0a00;
+  --theme-color-bg-card: rgba(124, 45, 18, 0.45);
+  --theme-color-border: rgba(251, 146, 60, 0.2);
+  --theme-color-text-title: #fff7ed;
+  --theme-color-text-body: #ffedd5;
+  --theme-color-accent-glow: rgba(251, 146, 60, 0.25);
+}
+
+
+/* THEME SYSTEM STYLING APPLICATION */
+
+/* Apply base background overrides to any non-default styling theme configuration */
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) {
+  background-color: var(--theme-color-bg-base) !important;
+  background-image: none !important;
+}
+
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-slate-50,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-[#050508] {
+  background-color: var(--theme-color-bg-base) !important;
+  background-image: none !important;
+}
+
+/* Card Background theme sync */
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-zinc-900,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-\[\#120e2e\]\/40,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-\[\#0f0a20cb\],
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-\[\#0f0a20f0\],
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-zinc-950\/40,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-\[\#0f0b1e\]\/60,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-zinc-900\/60,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-zinc-900\/80,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-zinc-950\/95,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-\[\#0b0821\],
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-\[\#0f0b2a\],
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-white {
+  background-color: var(--theme-color-bg-card) !important;
+  border-color: var(--theme-color-border) !important;
+  box-shadow: 0 4px 20px -2px var(--theme-color-accent-glow) !important;
+}
+
+/* Layout border colors */
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .border-white\/5,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .border-white\/10,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .border-slate-205,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .border-slate-200 {
+  border-color: var(--theme-color-border) !important;
+}
+
+/* Primary Color text overrides with css variables */
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .text-purple-400,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .text-indigo-400,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .text-\[\#a855f7\],
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .text-teal-400 {
+  color: var(--theme-color-primary) !important;
+}
+
+/* Background gradient or solid coloring buttons */
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-purple-600,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-indigo-600,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-\[\#a855f7\] {
+  background-color: var(--theme-color-primary) !important;
+}
+
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-purple-600:hover,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-indigo-600:hover {
+  background-color: var(--theme-color-primary-hover) !important;
+}
+
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-gradient-to-r.from-purple-600.to-blue-500,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .bg-gradient-to-tr.from-purple-500.via-indigo-500.to-blue-500 {
+  background-image: linear-gradient(to right, var(--theme-color-primary), var(--theme-color-primary-hover)) !important;
+}
+
+/* Base Typography theme sync colors */
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .text-white,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .text-zinc-100,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .text-slate-900 {
+  color: var(--theme-color-text-title) !important;
+}
+
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .text-zinc-300,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .text-zinc-400,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) .text-slate-600 {
+  color: var(--theme-color-text-body) !important;
+}
+
+/* Interactive Input Fields theme adaptive configurations */
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) input,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) textarea,
+#main-layout-root:not(.theme-default-dark):not(.theme-default-light) select {
+  border-color: var(--theme-color-border) !important;
+  color: var(--theme-color-text-title) !important;
+}
+
+#main-layout-root.theme-cyberpunk-dark input,
+#main-layout-root.theme-cyberpunk-dark textarea,
+#main-layout-root.theme-cyberpunk-dark select,
+#main-layout-root.theme-purple-dark input,
+#main-layout-root.theme-purple-dark textarea,
+#main-layout-root.theme-purple-dark select,
+#main-layout-root.theme-emerald-dark input,
+#main-layout-root.theme-emerald-dark textarea,
+#main-layout-root.theme-emerald-dark select,
+#main-layout-root.theme-sunset-dark input,
+#main-layout-root.theme-sunset-dark textarea,
+#main-layout-root.theme-sunset-dark select {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+#main-layout-root.theme-cyberpunk-light input,
+#main-layout-root.theme-cyberpunk-light textarea,
+#main-layout-root.theme-cyberpunk-light select,
+#main-layout-root.theme-purple-light input,
+#main-layout-root.theme-purple-light textarea,
+#main-layout-root.theme-purple-light select,
+#main-layout-root.theme-emerald-light input,
+#main-layout-root.theme-emerald-light textarea,
+#main-layout-root.theme-emerald-light select,
+#main-layout-root.theme-sunset-light input,
+#main-layout-root.theme-sunset-light textarea,
+#main-layout-root.theme-sunset-light select {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  color: var(--theme-color-text-title) !important;
+}
+
+/* Premium extra styling nodes glow additions */
+#main-layout-root.theme-cyberpunk-dark .bg-zinc-900,
+#main-layout-root.theme-cyberpunk-dark .rounded-3xl,
+#main-layout-root.theme-cyberpunk-dark .border {
+  border-color: #00f0ff !important;
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.28), inset 0 0 8px rgba(0, 240, 255, 0.05) !important;
+  position: relative;
+}
+
+/* Add futuristic Cyberpunk magenta-accent micro-indicator elements */
+#main-layout-root.theme-cyberpunk-dark .bg-zinc-900::before,
+#main-layout-root.theme-cyberpunk-dark .bg-zinc-950\/95::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 10px;
+  background: #ff0055;
+  border-radius: 2px 0 0 2px;
+}
+
+#main-layout-root.theme-purple-dark .bg-zinc-900,
+#main-layout-root.theme-purple-dark .rounded-3xl,
+#main-layout-root.theme-purple-dark .border {
+  box-shadow: 0 0 10px rgba(167, 139, 250, 0.15) !important;
+}
+
+#main-layout-root.theme-emerald-dark .bg-zinc-900,
+#main-layout-root.theme-emerald-dark .rounded-3xl,
+#main-layout-root.theme-emerald-dark .border {
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.12) !important;
+}
+
+#main-layout-root.theme-sunset-dark .bg-zinc-900,
+#main-layout-root.theme-sunset-dark .rounded-3xl,
+#main-layout-root.theme-sunset-dark .border {
+  box-shadow: 0 0 10px rgba(251, 146, 60, 0.15) !important;
+}
+
+/* Fluid Global Transitions to avoid sudden flashes, ensuring smooth visual fade effects on switches */
+#main-layout-root, 
+#main-layout-root *, 
+#workspace-reusable-footer,
+#chat-hint-bubble,
+#chat-toggle-launcher,
+#chat-window-box {
+  transition: background-color 0.4s ease-in-out, border-color 0.4s ease-in-out, color 0.4s ease-in-out, box-shadow 0.4s ease-in-out !important;
+}
+
+/* Dynamic Chatbot Accent Coloring adaptive mappings for Nova AI */
+#main-layout-root.theme-cyberpunk-dark #chat-window-box,
+#main-layout-root.theme-cyberpunk-light #chat-window-box {
+  box-shadow: 0 16px 40px rgba(0, 240, 255, 0.3) !important;
+  border-color: #00f0ff !important;
+}
+
+#main-layout-root.theme-purple-dark #chat-window-box,
+#main-layout-root.theme-purple-light #chat-window-box {
+  box-shadow: 0 16px 40px rgba(167, 139, 250, 0.25) !important;
+  border-color: var(--theme-color-primary) !important;
+}
+
+#main-layout-root.theme-emerald-dark #chat-window-box,
+#main-layout-root.theme-emerald-light #chat-window-box {
+  box-shadow: 0 16px 40px rgba(52, 211, 153, 0.22) !important;
+  border-color: var(--theme-color-primary) !important;
+}
+
+#main-layout-root.theme-sunset-dark #chat-window-box,
+#main-layout-root.theme-sunset-light #chat-window-box {
+  box-shadow: 0 16px 40px rgba(251, 146, 60, 0.25) !important;
+  border-color: var(--theme-color-primary) !important;
+}
+
+/* Chatbot Launcher backgrounds mapping */
+#main-layout-root.theme-cyberpunk-dark #chat-toggle-launcher,
+#main-layout-root.theme-cyberpunk-light #chat-toggle-launcher {
+  background-image: linear-gradient(to top right, #0891b2, #ff0055, #00f0ff) !important;
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.5) !important;
+}
+
+#main-layout-root.theme-purple-dark #chat-toggle-launcher,
+#main-layout-root.theme-purple-light #chat-toggle-launcher {
+  background-image: linear-gradient(to top right, #7c3aed, #c084fc, #1e0b36) !important;
+  box-shadow: 0 0 15px rgba(167, 139, 250, 0.45) !important;
+}
+
+#main-layout-root.theme-emerald-dark #chat-toggle-launcher,
+#main-layout-root.theme-emerald-light #chat-toggle-launcher {
+  background-image: linear-gradient(to top right, #059669, #34d399, #022c22) !important;
+  box-shadow: 0 0 15px rgba(52, 211, 153, 0.45) !important;
+}
+
+#main-layout-root.theme-sunset-dark #chat-toggle-launcher,
+#main-layout-root.theme-sunset-light #chat-toggle-launcher {
+  background-image: linear-gradient(to top right, #ea580c, #f97316, #1c0a00) !important;
+  box-shadow: 0 0 15px rgba(251, 146, 60, 0.45) !important;
+}
